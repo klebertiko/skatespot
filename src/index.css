@@ -1,0 +1,229 @@
+/* Import Google Fonts - Street Typography */
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Urban Concrete Wall Base Colors */
+    --background: 0 0% 16%;
+    /* #2a2a2a - Dark concrete */
+    --foreground: 0 0% 91%;
+    /* #e8e8e8 - Concrete light */
+
+    /* Card/Surface Colors - Concrete tones */
+    --card: 0 0% 17%;
+    /* #2d2d2d - Medium asphalt */
+    --card-foreground: 0 0% 91%;
+    --popover: 0 0% 14%;
+    /* #242424 - Darker surface */
+    --popover-foreground: 0 0% 91%;
+
+    /* Primary - Electric Cyan (graffiti accent) */
+    --primary: 187 100% 50%;
+    /* #00f0ff - Electric cyan */
+    --primary-foreground: 0 0% 10%;
+
+    /* Secondary - Worn Concrete */
+    --secondary: 0 0% 23%;
+    /* #3a3a3a - Concrete gray */
+    --secondary-foreground: 0 0% 91%;
+
+    /* Muted - Subtle grays */
+    --muted: 0 0% 20%;
+    /* #333333 */
+    --muted-foreground: 0 0% 54%;
+    /* #8a8a8a */
+
+    /* Accent - Neon Lime (graffiti pop) */
+    --accent: 73 100% 60%;
+    /* #ccff00 - Neon lime */
+    --accent-foreground: 0 0% 10%;
+
+    /* Destructive - Hot Magenta */
+    --destructive: 333 100% 50%;
+    /* #ff006e - Hot magenta */
+    --destructive-foreground: 0 0% 98%;
+
+    /* Warning - Sunset Orange */
+    --warning: 16 100% 60%;
+    /* #ff6b35 - Sunset orange */
+    --warning-foreground: 0 0% 10%;
+
+    /* Borders and Inputs */
+    --border: 0 0% 25%;
+    /* #404040 - Subtle border */
+    --input: 0 0% 20%;
+    --ring: 187 100% 50%;
+    /* Electric cyan ring */
+
+    /* Chart colors - Graffiti inspired */
+    --chart-1: 187 100% 50%;
+    /* Electric cyan */
+    --chart-2: 73 100% 60%;
+    /* Neon lime */
+    --chart-3: 333 100% 50%;
+    /* Hot magenta */
+    --chart-4: 16 100% 60%;
+    /* Sunset orange */
+    --chart-5: 280 100% 60%;
+    /* Purple */
+
+    --radius: 0.75rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    position: relative;
+  }
+
+  /* Typography - Street Style */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: 'Bebas Neue', 'Impact', sans-serif;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  h1 {
+    @apply text-5xl md:text-6xl;
+  }
+
+  h2 {
+    @apply text-4xl md:text-5xl;
+  }
+
+  h3 {
+    @apply text-3xl md:text-4xl;
+  }
+}
+
+@layer utilities {
+
+  /* Graffiti Glow Effect */
+  .glow-primary {
+    text-shadow:
+      0 0 10px hsl(var(--primary) / 0.5),
+      0 0 20px hsl(var(--primary) / 0.3),
+      0 0 30px hsl(var(--primary) / 0.2);
+  }
+
+  .glow-accent {
+    text-shadow:
+      0 0 10px hsl(var(--accent) / 0.5),
+      0 0 20px hsl(var(--accent) / 0.3),
+      0 0 30px hsl(var(--accent) / 0.2);
+  }
+
+  .glow-destructive {
+    text-shadow:
+      0 0 10px hsl(var(--destructive) / 0.5),
+      0 0 20px hsl(var(--destructive) / 0.3),
+      0 0 30px hsl(var(--destructive) / 0.2);
+  }
+
+  /* Box glow effects */
+  .box-glow-primary {
+    box-shadow:
+      0 0 20px hsl(var(--primary) / 0.3),
+      0 0 40px hsl(var(--primary) / 0.1),
+      0 4px 6px -1px rgb(0 0 0 / 0.3);
+  }
+
+  .box-glow-accent {
+    box-shadow:
+      0 0 20px hsl(var(--accent) / 0.3),
+      0 0 40px hsl(var(--accent) / 0.1),
+      0 4px 6px -1px rgb(0 0 0 / 0.3);
+  }
+
+  /* Concrete texture */
+  .texture-concrete {
+    background-image:
+      repeating-linear-gradient(45deg,
+        transparent,
+        transparent 10px,
+        rgba(255, 255, 255, 0.02) 10px,
+        rgba(255, 255, 255, 0.02) 20px);
+  }
+
+  /* Concrete wall gradient */
+  .gradient-concrete {
+    background: linear-gradient(135deg,
+        hsl(var(--background)) 0%,
+        hsl(0 0% 18%) 50%,
+        hsl(var(--background)) 100%);
+  }
+
+  /* Street-style animations */
+  .animate-slide-up {
+    animation: slideUp 0.4s ease-out;
+  }
+
+  .animate-glow-pulse {
+    animation: glowPulse 2s ease-in-out infinite;
+  }
+
+  .animate-lift {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .animate-lift:hover {
+    transform: translateY(-4px);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes glowPulse {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.7;
+  }
+}
+
+/* Scrollbar styling - Urban theme */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--background));
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--muted));
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--primary));
+}
