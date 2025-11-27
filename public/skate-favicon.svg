@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64" fill="none">
+  <rect width="64" height="64" rx="12" fill="#0f172a"/>
+  <!-- Deck -->
+  <ellipse cx="32" cy="30" rx="22" ry="8" fill="#f59e0b"/>
+  <!-- Trucks -->
+  <rect x="20" y="28" width="4" height="6" rx="1" fill="#111827"/>
+  <rect x="40" y="28" width="4" height="6" rx="1" fill="#111827"/>
+  <!-- Wheels -->
+  <g fill="#111827">
+    <circle cx="18" cy="36" r="4"/>
+    <circle cx="46" cy="36" r="4"/>
+  </g>
+  <g fill="#f3f4f6">
+    <circle cx="18" cy="36" r="1.6"/>
+    <circle cx="46" cy="36" r="1.6"/>
+  </g>
+</svg>
